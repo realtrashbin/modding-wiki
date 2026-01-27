@@ -2,20 +2,20 @@
 
 # Organya
 
-
-
-## Overview
 *:warning: Information Incomplete: Fillers currently in use*
 
-Organa is a custom music tracker format created by Pixel in [insert proper date here].
-It is most prominently known for its use in Cave Story, but several other games use it, too, such as:
+## Overview
+
+Organya(org) is a custom music tracker format created by Pixel in 1999 as an updated version of his previous music program; [PiyoPiyo](PiyoPiyoPage).
+It is most prominently known for its use in [Cave Story](https://cavestory.org), but a couple other games use it, too, such as:
 - [Stargazer](http://www5b.biglobe.ne.jp/~kiss-me/aji/star/)
+- [Azarashi (2001)](https://www.cavestory.org/pixels-works/azarashi.php) 
 
 
 The format allows the playback of 14-16 simultaneous channels, with 8 note polyphony and 6-8 different percussion instruments, depending on the player used.
 
 
-Cave Story only allows 6 of the 8 available percussion tracks to be used, and each is hard-baked to a specific instrument. Changing percussion instruments in the editor will not affect which one will be used during playback ingame. Any notes put in tracks U and I will be ignored during playback.
+Cave Story only allows 6 of the 8 available percussion tracks to be used, and each is hard-coded to a specific instrument. Changing percussion instruments in the editor will not affect which one will be used during playback ingame. Any notes put in tracks U and I will crash the game.
 These instruments are:
 
 - **Channel Q:** Bass01
@@ -27,22 +27,27 @@ These instruments are:
 - **Channel U:** Unused (Bass01 by default in OrgMaker)
 - **Channel I:** Unused (Bass01 by default in OrgMaker)
 
-This is the case because unlike the org editors which use .wav samples for drums, Cave Story uses the .pxtone format. This means that drum samples can be replaced in the same manner as [other sfx](freeware-asset-replacement), but the other drum formats used in Orgmaker2 will need to be recreated using a pixtone editor, such as [SeaTone](freeware-asset-replacement).
+This is the case because unlike the org editors which use .wav samples for drums, Cave Story uses the .pxt or PixTone format. This means that drum samples can be replaced in the same manner as [other sfx](SeaTone'sOrIt'sIncludedPusherPage), but the other drum formats used in Orgmaker2 will need to be recreated using a pixtone editor, such as [PixTone](PixTonePage) or [SeaTone](SeaTonePage).
 
 
 
 
 ## Editors
 
-*:warning: Information Incomplete: Fillers currently in use*
+*:warning: Information Incomplete: Too lazy to make the actual pages*
 
 Two original versions of the org editor have been released to the public, titled [Orgmaker](orgmaker1) and [Orgmaker2](orgmaker2), respectively.
+There's also been recovered versions, those are: [V1.0](https://www.cavestory.org/downloads/Org1.0.zip), [V1.1](https://www.cavestory.org/downloads/Org1.1.zip), [V1.3.2](https://www.cavestory.org/downloads/Org132.lzh) and [V1.3.3](https://www.cavestory.org/downloads/Org133.lzh).
+Although, V1.0 and V1.1 might not entirely be the original versions because during the 90's Pixel often used the .lzh format for compression instead of .zip, this might've be because of .lzh's popularity in Japan at the time.
 
 
-The Orgmaker2 editor allows for different drum types to be specified.
+The Orgmaker2 editor allows for different drum instruments to be specified.
 
 
 Several other community efforts have been made to update or completely replace these editors and add some missing quality-of-life features. A notable example of this is [Orgmaker3](orgmaker3).
+
+
+A community member has also made an effort to double the amount of tracks used by OrgMaker to make it more versatile. The project is called *OrganyaMaker-16*.
 
 
 ## File format
@@ -51,14 +56,15 @@ Several other community efforts have been made to update or completely replace t
 The ORG music file is in binary.
 
 
-The instruments are baked into the reader (the file tells the player what instrument number to use)
+The instruments are baked into the reader (the file tells the player what instrument number to use.).
 
 
-### Header
+### The Header
 
 
 The first 6+12 (18) bytes are header info, containing the:
-- Org Type (6 char string). This can be `org-01`, `org-02`, or `org-03` and corresponds to the capabilities that the file has, such as fancy drums or using pipi.
+- Org Type (6 char string). This can be `Org-02`, `Org-03` or `Org-16` and corresponds to the capabilities that the file has, such as fancy drums or using more tracks.
+- There is an Org Type of `Org-01` but sometime after V1.1, Pixel made OrgMaker write `Org-02` instead, this means Orgmaker will write `Org-02` regardless if pipi is used or not.
 
 - Wait (tempo, 2 bytes), see **Org Tempo**
 - Line (number of beats per measure, 1 byte), can also be thought of as the number of vertical "lines" the editor shows between each measure.
@@ -86,10 +92,10 @@ After this, there is a chunk of (16 (tracks, including drums AND notes) *6 (byte
 
 
 Bit structure:
-- Frequency/pitch detune (2 bytes)
-- Wave_no (waveform/percussion instrument) (1 byte)
-- Pipi(1 byte) (only regarded if org version is 2 or more, otherwise is set to 0, is a binary value)
-- Note_num (2 bytes) (total number of notes in the song from this track, including note modifiers, such as pan or volume events).
+- Frequency (Detunes the track: the farther from frequency 1000 the more the detunement is added.) (2 bytes)
+- Wave_no (Waveform/Percussion instrument.) (1 byte)
+- Pipi (Only regarded if the header is 2 or greater, otherwise it's set to 0. Is a binary value, it sets an instrument into a pizzicato mode.) (1 byte)
+- Note_num (total number of notes in the song from a track, including note modifiers, such as pan or volume events) (2 bytes)
 
 
 <details>
