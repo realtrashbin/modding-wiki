@@ -5,7 +5,7 @@
 ## Overview
 *:warning: Information Incomplete: Fillers currently in use*
 
-Organya (org) is a custom music tracker format created by Pixel in 1999 as an improved version of his other music format - Pixel Music Data(pmd), which was used by his other music editor PiyoPiyo.
+Organya (*.org) is a custom music tracker format created by Pixel in 1999 as an improved version of his other music format - Pixel Music Data(pmd), which was used by his other music editor PiyoPiyo.
 It is most prominently known for its use in Cave Story, but several other games use it, too, like [Stargazer](http://www5b.biglobe.ne.jp/~kiss-me/aji/star/) and [Azarashi 2001](https://www.cavestory.org/pixels-works/azarashi.php).
 
 
