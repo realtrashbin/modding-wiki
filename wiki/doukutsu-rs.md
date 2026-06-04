@@ -10,7 +10,7 @@
 
 <tr><td>Creator(s):</td><td>Alula Et al.</td></tr>
 <tr><td>Year:</td><td>2021</td></tr>
-<tr><td>Platform:</td><td>Windows, Mac, Linux, Android</td></tr>
+<tr><td>Platform:</td><td>Windows, Mac, Linux, Android, Nintendo Switch</td></tr>
 <tr><td>Status:</td><td>
 <p style="color:#00B000;">Active development</p>
 </td></tr>
@@ -26,14 +26,13 @@
 
 The earliest mention of this engine was on August 5, 2020 in the CSMC discord server. On [August 18, 2020](https://github.com/doukutsu-rs/doukutsu-rs/commit/b89d54251f42f4d8b247bbc6ebac2c9efe78ac74), the first commit was uploaded to Github.
 
-
-Since this engine is still in active development, there is still no "Official" release of the engine, though nightly builds with the latest changes are available on the official website.
+For a long time, the engine didn't have an "official" release, until version 1.0.0 was released on June 3, 2026, which formalized the stability of the engine.
 
 
 ## Behavior
 
 
-d-rs is designed to be a drop-in replacement for all existing versions of cave story, including:
+d-rs is designed to be a drop-in replacement for all existing versions of Cave Story, including:
 - [Cave Story Freeware](freeware)
 - [Cave Story +](cavestoryplus-pc)
 - Cave Story Switch
