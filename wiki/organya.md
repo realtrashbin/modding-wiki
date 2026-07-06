@@ -38,7 +38,7 @@ The Orgmaker 2 editor allows for different drum instruments to be specified.
 
 Several other community efforts have been made to update or completely replace these editors and add some missing quality-of-life features. A notable example of this is [Orgmaker 3](orgmaker3).
 
-There is also a project called **OrganyaMaker-16**, whose initial goal was to double the number of channels from 16 to 32. Since it's still in active development and may be unstable, its file format is not described in this article.
+There is also a project called **OrganyaMaker-16**, whose initial goal was to double the number of channels from 16 to 32. Furthermore, it also supports flags, which can be used to change the pitch, tempo, and volume of a specific track during playback. Files that use flags or 16 tracks are saved with the `org16` extension and have the org types `Org-10` and `Org-16`, respectively. Since **this format isn't supported by any of the existing engines** - neither natively nor through hacks or mods - it's not described in this article.
 
 
 ## File format
